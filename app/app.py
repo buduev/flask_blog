@@ -1,8 +1,8 @@
 import sqlite3
 from flask import Flask, render_template, request, url_for, flash, redirect
 from werkzeug.exceptions import abort
-import logging
-import os
+
+import os, sys
 import json
 import random
 import time
@@ -34,8 +34,30 @@ def get_post(post_id):
     return post
 
 
+def start_db():
+    connection = sqlite3.connect('db/database.db')
+    
+    with open('db/schema.sql') as f:
+        connection.executescript(f.read())
+
+    cur = connection.cursor()
+
+    cur.execute("INSERT INTO posts (title, content) VALUES (?, ?)",
+                ('First Post', 'Content for the first post')
+                )
+
+    cur.execute("INSERT INTO posts (title, content) VALUES (?, ?)",
+                ('Second Post', 'Content for the second post')
+                )
+
+    connection.commit()
+    connection.close()
+
+
+
+
 @app.route('/')
-def app():
+def _app():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM posts').fetchall()
     conn.close()    
@@ -48,7 +70,7 @@ def post(post_id):
     post = get_post(post_id)
     return render_template('post.html', post=post)
 
-
+ 
 @app.route('/probe')
 def probe():
     if random.random() < FAIL_RATE:
@@ -60,6 +82,11 @@ def probe():
     return "OK"
 
 
+if __name__ == "__main__":    
+    try:
+        start_db()
+        app.run(host='0.0.0.0', port='5001', debug=True)
+    except Exception as e:
+        print(str(e))
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port='5001', debug=True)
+    
