@@ -10,8 +10,8 @@ services:
       - 5001:5001
     networks:
       - backend
-      environment:
-      - FLASK_ENV=development
+    environment:
+    - FLASK_ENV=development
     depends_on:
       - db
 
@@ -29,7 +29,7 @@ services:
       - POSTGRES_DB=blogs
     # volumes:
     #   - "db-data:/var/lib/postgresql/data"      
-  
+
 networks:
   frontend:
   backend:
