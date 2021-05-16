@@ -16,7 +16,9 @@ SLOW_RATE=float(os.environ.get('SLOW_RATE', '0.00'))
 
 POSTGRES_USER = os.environ.get('POSTGRES_USER')
 POSTGRES_PASSWORD = os.environ.get('POSTGRES_PASSWORD')
-DATABASE_URL = f'postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@postgres:5432/blogs'
+POSTGRES_DB = os.environ.get('POSTGRES_DB')
+
+DATABASE_URL = f'postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@db:5432/{POSTGRES_DB}'
 
 def do_staff():
     time.sleep(random.gammavariate(alpha=1.5, beta=.1))

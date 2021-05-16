@@ -1,11 +1,5 @@
 # Running Flask on Kubernetes
 
-## Want to learn how to build this?
-
-Check out the [post](https://testdriven.io/running-flask-on-kubernetes).
-
-## Want to use this project?
-
 ### Docker
 
 Build the images and spin up the containers:
