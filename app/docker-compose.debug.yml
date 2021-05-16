@@ -12,3 +12,4 @@ services:
       - 5678:5678
     environment:
       - FLASK_APP=app\hello.py
+      - FLASK_ENV=development
