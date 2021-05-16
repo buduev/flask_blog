@@ -1,3 +1,7 @@
+drop DATABASE IF EXISTS blogs;
+
+CREATE DATABASE blogs;
+
 DROP TABLE IF EXISTS posts;
 
 CREATE TABLE posts (
