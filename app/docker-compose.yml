@@ -12,7 +12,7 @@ services:
     postgres:
       build:
         context: ./db
-        dockerfile: Dockerfile
+        dockerfile: ./Dockerfile
       expose:
         - 5432
       environment:
