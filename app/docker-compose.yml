@@ -2,7 +2,6 @@ version: '3.4'
 
 services:
   flaskblog:
-    name: flaskblog_app
     image: flaskblog
     build:
       context: .
