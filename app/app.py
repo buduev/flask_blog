@@ -2,13 +2,13 @@ import sqlite3
 from flask import Flask, render_template, request, url_for, flash, redirect
 from werkzeug.exceptions import abort
 
-import os, sys
+import os
+import sys
 import json
 import random
 import time
 
 app = Flask(__name__)
-
 
 FAIL_RATE=float(os.environ.get('FAIL_RATE', '0.05'))
 SLOW_RATE=float(os.environ.get('SLOW_RATE', '0.00'))
@@ -33,35 +33,11 @@ def get_post(post_id):
         abort(404)
     return post
 
-
-def start_db():
-    connection = sqlite3.connect('db/database.db')
-    
-    with open('db/schema.sql') as f:
-        connection.executescript(f.read())
-
-    cur = connection.cursor()
-
-    cur.execute("INSERT INTO posts (title, content) VALUES (?, ?)",
-                ('First Post', 'Content for the first post')
-                )
-
-    cur.execute("INSERT INTO posts (title, content) VALUES (?, ?)",
-                ('Second Post', 'Content for the second post')
-                )
-
-    connection.commit()
-    connection.close()
-
-
-
-
 @app.route('/')
 def _app():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM posts').fetchall()
     conn.close()    
-    logging.debug("Текущая деректория:", os.getcwd())
     return render_template('index.html', posts = posts)
 
 
@@ -82,9 +58,29 @@ def probe():
     return "OK"
 
 
+@app.route('/create', methods=('GET', 'POST'))
+def create():
+    if request.method == 'POST':
+        title = request.form['title']
+        content = request.form['content']
+
+        if not title:
+            flash('Title is required!')
+        else:
+            conn = get_db_connection()
+            conn.execute('INSERT INTO posts (title, content) VALUES (?, ?)',
+                         (title, content))
+            conn.commit()
+            conn.close()
+            return redirect(url_for('index'))
+
+    return render_template('create.html')
+
+
+
 if __name__ == "__main__":    
     try:
-        start_db()
+        #start_db()
         app.run(host='0.0.0.0', port='5001', debug=True)
     except Exception as e:
         print(str(e))
