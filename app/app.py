@@ -35,7 +35,7 @@ def get_post(post_id):
 
 
 @app.route('/')
-def hello():
+def app():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM posts').fetchall()
     conn.close()    
