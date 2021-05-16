@@ -1,17 +1,22 @@
-import sqlite3
-from flask import Flask, render_template, request, url_for, flash, redirect
-from werkzeug.exceptions import abort
-
 import os
 import sys
 import json
 import random
 import time
+import sqlite3
+import psycopg2
+from flask import Flask, render_template, request, url_for, flash, redirect
+from werkzeug.exceptions import abort
+
 
 app = Flask(__name__)
 
 FAIL_RATE=float(os.environ.get('FAIL_RATE', '0.05'))
 SLOW_RATE=float(os.environ.get('SLOW_RATE', '0.00'))
+
+POSTGRES_USER = os.environ.get('POSTGRES_USER')
+POSTGRES_PASSWORD = os.environ.get('POSTGRES_PASSWORD')
+DATABASE_URL = f'postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@postgres:5432/blogs'
 
 def do_staff():
     time.sleep(random.gammavariate(alpha=1.5, beta=.1))
@@ -20,8 +25,7 @@ def do_slow():
     time.sleep(random.gammavariate(alpha=30, beta=0.3))
 
 def get_db_connection():
-    conn = sqlite3.connect('app/db/database.db')
-    conn.row_factory = sqlite3.Row
+    conn = psycopg2.connect(DATABASE_URL)    
     return conn
 
 def get_post(post_id):
