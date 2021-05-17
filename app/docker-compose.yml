@@ -6,16 +6,16 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    command: ["sh", "-c", "pip install debugpy -t /tmp && python /tmp/debugpy --wait-for-client --listen 0.0.0.0:5678 -m flask run --no-debugger --no-reload --host 0.0.0.0 --port 5001"]
+    #command: ["sh", "-c", "pip install debugpy -t /tmp && python /tmp/debugpy --wait-for-client --listen 0.0.0.0:5678 -m flask run --no-debugger --no-reload --host 0.0.0.0 --port 5001"]
     ports:
       - 5001:5001
-      - 5678:5678
+    #  - 5678:5678
     networks:
       - backend
     environment:
       - FLASK_ENV=development
     links: 
-      - db:db
+      - db
     depends_on:
       - db
 
@@ -33,7 +33,7 @@ services:
       - POSTGRES_DB=blogs
       - POSTGRES_HOST_AUTH_METHOD=trust
 
-      
+
 networks:
   frontend:
   backend:
