@@ -27,7 +27,10 @@ def do_slow():
     time.sleep(random.gammavariate(alpha=30, beta=0.3))
 
 def get_db_connection():
-    conn = psycopg2.connect(DATABASE_URL)    
+    try:
+        conn = psycopg2.connect(DATABASE_URL)    
+    except Exception as e:
+        print(str(e))        
     return conn
 
 def get_post(post_id):

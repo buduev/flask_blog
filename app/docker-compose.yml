@@ -15,7 +15,7 @@ services:
     environment:
       - FLASK_ENV=development
     links: 
-      - db
+      - db:blogs
     depends_on:
       - db
 

@@ -1,4 +1,6 @@
-CREATE DATABASE blogs;
+CREATE USER postgres superuser;
+
+CREATE DATABASE blogs WITH OWNER postgres;
 
 CREATE TABLE posts (
     id INTEGER PRIMARY KEY AUTOINCREMENT,

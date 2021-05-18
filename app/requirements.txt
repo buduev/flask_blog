@@ -1,4 +1,4 @@
 # To ensure app dependencies are ported from your virtual environment/host machine into your container, run 'pip freeze > requirements.txt' in the terminal to overwrite this file
 flask==2.0.0
 #prometheus-client==0.7.1
-psycopg2-binary==2.8.5
+psycopg2-binary==2.8.6
