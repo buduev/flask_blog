@@ -1,4 +1,4 @@
-# Простенкий сервис блогов на Flask
+# Простенкий сервис блогов на Flask на основе https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3-ru
 # Возможные варианты развертывания - Docker/Kubernetes
 
 ### Docker
