@@ -1,5 +1,5 @@
 # Простенкий сервис блогов на Flask на базе статьи
-# [https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3-ru](Создание веб-приложения с помощью Flask в Python 3)
+https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3-ru
 # Изменение - в качестве базы данных использован Postgres
 # Возможные варианты развертывания - Docker/Kubernetes
 
