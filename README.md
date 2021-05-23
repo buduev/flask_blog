@@ -22,6 +22,6 @@ $ docker-compose up
 
 ### Kubernetes
 
-#### Minikube
+#### Minikube (раздел в разработке)
 
 Install and run [Minikube](https://kubernetes.io/docs/setup/minikube/):
