@@ -1,4 +1,5 @@
-# Running Flask on Kubernetes
+# Простенкий сервис блогов на Flask
+# Возможные варианты развертывания - Docker/Kubernetes
 
 ### Docker
 
