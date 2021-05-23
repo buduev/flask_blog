@@ -3,11 +3,15 @@
 
 ### Docker
 
-Build the images and spin up the containers:
-
+Построить образ и запусить контейнер:
 ```sh
 $ docker-compose up -d --build
 ```
+Для запуска в отладочном режиме
+```sh
+$ docker-compose up
+```
+
 
 Run the migrations and seed the database:
 
