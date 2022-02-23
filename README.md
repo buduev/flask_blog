@@ -27,5 +27,7 @@ $ docker-compose up
 Install and run [Minikube](https://kubernetes.io/docs/setup/minikube/):
 
 https://testdriven.io/blog/running-flask-on-kubernetes/
+
 https://www.8host.com/blog/bazovoe-razvertyvanie-prilozheniya-flask-s-pomoshhyu-kubernetes-i-docker/
+
 https://medium.com/featurepreneur/deploying-a-flask-app-to-kubernetes-f05c93866aff
