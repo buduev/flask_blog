@@ -23,7 +23,10 @@
 
 ### Kubernetes
 
-Был использован кластер k8s создаваемый в Docker Desktop 
+Был использован кластер k8s предоставляемый Docker Desktop
+
+Создать пространство имен flask:
+kubectl create namespace flask
 
 https://testdriven.io/blog/running-flask-on-kubernetes/
 
