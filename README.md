@@ -17,10 +17,9 @@
 ~/.docker/flask_blog/app$ docker-compose up
 ```
 
-Рабочая ссылка
+Приложение доступно по ссылке
 
-1. [http://localhost:5001/](http://localhost:5001/)
-2. [http://localhost:5001/probe](http://localhost:5001/probe)
+[http://localhost:5001/](http://localhost:5001/)
 
 ### Kubernetes
 
