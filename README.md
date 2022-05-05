@@ -8,7 +8,7 @@
 
 ### Docker
 
-Построить образ и запусить контейнер:
+Построить образ и запустить контейнер:
 ```sh
 ~/.docker/flask_blog/app$ docker-compose up -d --build
 ```
