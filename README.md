@@ -1,4 +1,4 @@
-# Простенький сервис блогов на Flask на базе [прототипа](https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3-ru)
+# Простенький сервис блогов с использованием библиотеки Flask на базе [прототипа](https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3-ru)
 
 В отличие от прототипа в качестве базы данных использован Postgres.
 
