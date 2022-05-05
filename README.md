@@ -14,7 +14,7 @@
 ```
 Для запуска в отладочном режиме
 ```sh
-$ docker-compose up
+~/.docker/flask_blog/app$ docker-compose up
 ```
 
 Рабочая ссылка
