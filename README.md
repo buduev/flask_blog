@@ -23,9 +23,7 @@
 
 ### Kubernetes
 
-#### Minikube (раздел в разработке)
-
-Install and run [Minikube](https://kubernetes.io/docs/setup/minikube/):
+Был использован кластер k8s создаваемый в Docker Desktop 
 
 https://testdriven.io/blog/running-flask-on-kubernetes/
 
