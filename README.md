@@ -1,6 +1,7 @@
 # Простенький сервис блогов на Flask на базе [прототипа](https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3-ru)
 
 В отличие от прототипа в качестве базы данных использован Postgres.
+
 Для тестирования на локальной Windows машине использовался [Docker Desktop для Windows с помощью WSL 2](https://docs.microsoft.com/ru-ru/windows/wsl/tutorials/wsl-containers)
 
 Возможные варианты развертывания - Docker/Kubernetes
