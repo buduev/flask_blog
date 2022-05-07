@@ -25,6 +25,8 @@
 
 Был использован кластер k8s предоставляемый Docker Desktop
 
+Желающим использовать Kubernetes Dashboard - [сюда](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
+
 Создать пространство имен flask:
 kubectl create namespace flask
 
