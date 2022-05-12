@@ -27,8 +27,13 @@
 
 Желающим использовать Kubernetes Dashboard - [сюда](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
 
+А [здесь](https://andrewlock.net/running-kubernetes-and-the-dashboard-with-docker-desktop/) подробней
+
 Создать пространство имен flask:
-kubectl create namespace flask
+```sh
+~/.docker/flask_blog/app$ kubectl create namespace flask
+```
+
 
 https://testdriven.io/blog/running-flask-on-kubernetes/
 
