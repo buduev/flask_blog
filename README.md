@@ -31,8 +31,16 @@
 
 Создать пространство имен flask:
 ```sh
-~/.docker/flask_blog/app$ kubectl create namespace flask
+~/.docker/flask_blog/app$ kubectl create namespace igrich
 ```
+
+### Шаги для создания хранилища БД Post
+
+1. $ kubectl apply -f postgres-svc.yml
+2. $ kubectl apply -f postgres-storage.yml
+3. 
+
+
 
 
 https://testdriven.io/blog/running-flask-on-kubernetes/
