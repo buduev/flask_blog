@@ -37,12 +37,12 @@
 
 ### Шаги для создания хранилища БД Post
 
-1. $ kubectl apply -f postgres-svc.yml
+1. ```sh $ kubectl apply -f postgres-svc.yml ```sh
 2. $ kubectl apply -f postgres-storage.yml
 3. 
 
 
-
+ 
 
 https://testdriven.io/blog/running-flask-on-kubernetes/
 
