@@ -25,7 +25,7 @@
 
 Был использован кластер k8s предоставляемый Docker Desktop
 
-Желающим использовать Kubernetes Dashboard - [сюда](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
+Для мониторинга создаваемых объектов можно использовать плагин VS, но мне удобнее Kubernetes Dashboard - [сюда](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
 
 А [здесь](https://andrewlock.net/running-kubernetes-and-the-dashboard-with-docker-desktop/) подробней и с метриками
 
