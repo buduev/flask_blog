@@ -37,7 +37,8 @@
 
 ### Шаги для создания хранилища БД Post
 
-Создаем storage 
+Создаем хранилище с помощью [PersistentVolume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistent-volumes) и [PersistentVolumeClaim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims) для хранения данных Postgres вне Pod.
+
 ```sh
 $ kubectl apply -f postgres-storage.yml
 ```
