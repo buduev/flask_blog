@@ -48,7 +48,7 @@ $ kubectl apply -f postgres-svc.yml
 ```
 
 ```sh
-k1bect1 port-forward deployment/flask-deployment -n igrich 5001:5001
+$ kubectl port-forward deployment/flask-deployment -n igrich 5001:5001
 ```
  
 
