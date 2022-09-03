@@ -45,10 +45,9 @@ $ kubectl apply -f postgres-storage.yml
 
 ```sh
 $ kubectl apply -f postgres-svc.yml 
-```
-3. 
-4. 
-
+loyment```
+igrich. 
+k1bect1 port-forward deployment/flask-deployment -n igrich 5001:5001
 
  
 
