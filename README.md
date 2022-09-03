@@ -45,10 +45,11 @@ $ kubectl apply -f postgres-storage.yml
 
 ```sh
 $ kubectl apply -f postgres-svc.yml 
-loyment```
-igrich. 
-k1bect1 port-forward deployment/flask-deployment -n igrich 5001:5001
+```
 
+```sh
+k1bect1 port-forward deployment/flask-deployment -n igrich 5001:5001
+```
  
 
 https://testdriven.io/blog/running-flask-on-kubernetes/
