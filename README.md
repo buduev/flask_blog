@@ -22,8 +22,9 @@
 [http://localhost:5001/](http://localhost:5001/)
 
 ### Kubernetes
+Будем использовать образы созданные на предыдущем шаге
 
-Был использован кластер k8s предоставляемый Docker Desktop
+Я не ставил отдельно minikube, был использован кластер k8s предоставляемый Docker Desktop
 
 Для мониторинга создаваемых объектов можно использовать плагин VS, но мне удобнее [Kubernetes Dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
 
