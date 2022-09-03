@@ -40,11 +40,11 @@
 Создаем storage 
 ```sh
 $ kubectl apply -f postgres-storage.yml
-```sh
+```
 
 ```sh
 $ kubectl apply -f postgres-svc.yml 
-```sh
+```
 3. 
 4. 
 
