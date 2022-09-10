@@ -30,10 +30,26 @@
 
 А [здесь](https://andrewlock.net/running-kubernetes-and-the-dashboard-with-docker-desktop/) подробней и с метриками
 
-Создать пространство имен flask:
+Создадим собственное пространство имен:
 ```sh
 ~/.docker/flask_blog/app$ kubectl create namespace igrich
 ```
+
+Создать секреты для базы данных. Секреты хранятся в base64x, поэтому сначала закодируем креды:
+
+```sh
+$ echo -n "username" | base64
+```
+
+```sh
+$ echo -n "password" | base64
+```
+
+
+```sh
+~/.docker/flask_blog/app$ $ kubectl apply -f ./k8s/secret.yml
+```
+
 
 ### Шаги для создания хранилища БД Post
 
