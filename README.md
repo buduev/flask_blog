@@ -44,7 +44,7 @@ $ echo -n "password" | base64
 
 
 ```sh
-~/.docker/flask_blog/app$ $ kubectl apply -f ./k8s/secret.yml
+~/.docker/flask_blog/app$ $ kubectl apply -f ./k8s/secret.yml -n igrich
 ```
 
 
@@ -53,11 +53,11 @@ $ echo -n "password" | base64
 Создаем хранилище с помощью [PersistentVolume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistent-volumes) и [PersistentVolumeClaim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims) для хранения данных Postgres вне Pod.
 
 ```sh
-$ kubectl apply -f postgres-storage.yml
+$ kubectl apply -f postgres-storage.yml -n igrich
 ```
 
 ```sh
-$ kubectl apply -f postgres-svc.yml 
+$ kubectl apply -f postgres-svc.yml -n igrich
 ```
 
 ```sh
