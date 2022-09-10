@@ -39,9 +39,6 @@
 
 ```sh
 $ echo -n "username" | base64
-```
-
-```sh
 $ echo -n "password" | base64
 ```
 
