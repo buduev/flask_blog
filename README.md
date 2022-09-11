@@ -44,21 +44,21 @@ $ echo -n "password" | base64
 
 
 ```sh
-~/.docker/flask_blog/app$ $ kubectl apply -f ./k8s/secret.yml -n igrich
+~/.docker/flask_blog/app$ kubectl apply -f ./k8s/secret.yml -n igrich
 ```
-
-
-### Шаги для создания хранилища БД Post
 
 Создаем хранилище с помощью [PersistentVolume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistent-volumes) и [PersistentVolumeClaim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims) для хранения данных Postgres вне Pod.
 
 ```sh
-$ kubectl apply -f postgres-storage.yml -n igrich
+~/.docker/flask_blog/app$ kubectl apply -f ./k8s/postgres-storage.yml -n igrich
+~/.docker/flask_blog/app$ kubectl apply -f ./k8s/postgres-svc.yml -n igrich
 ```
 
+Создаем сервис блога
 ```sh
-$ kubectl apply -f postgres-svc.yml -n igrich
+~/.docker/flask_blog/app$ kubectl apply -f ./k8s/flaskblog-service.yml -n igrich
 ```
+
 
 ```sh
 $ kubectl port-forward deployment/flask-deployment -n igrich 5001:5001
