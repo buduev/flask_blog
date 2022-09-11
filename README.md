@@ -51,12 +51,12 @@ $ echo -n "password" | base64
 
 ```sh
 ~/.docker/flask_blog/app$ kubectl apply -f ./k8s/postgres-storage.yml -n igrich
-~/.docker/flask_blog/app$ kubectl apply -f ./k8s/postgres-svc.yml -n igrich
+~/.docker/flask_blog/app$ kubectl apply -f ./k8s/postgres-service.yml -n igrich
 ```
 
 Создаем сервис блога
 ```sh
-~/.docker/flask_blog/app$ kubectl apply -f ./k8s/flaskblog-service.yml -n igrich
+~/.docker/flask_blog/app$ kubectl apply -f ./k8s/flask-service.yml -n igrich
 ```
 
 
