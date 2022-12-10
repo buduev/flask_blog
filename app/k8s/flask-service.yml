@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-deployment
+  namespace: igrich
+  labels:
+    app: flask-blog-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-blog-app
+  template:
+    metadata:
+      labels:
+        app: flask-blog-app
+    spec:
+      containers:
+      - name: flaskblog-container
+        image: igrich/flaskblog:v1.1
+        ports:
+        - containerPort: 5001
+        resources:
+          limits:
+            memory: 256Mi
+            cpu: "0.5"
+          requests:
+            memory: 256Mi
+            cpu: "0.5"      
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-service
+  namespace: igrich
+  labels:
+    service: flask-service
+    app: flask-blog-app
+spec:
+  #type: LoadBalancer 
+  selector:
+    app: flask-blog-app
+  ports:
+  - port: 5002
+    targetPort: 5001
+    #protocol: TCP
